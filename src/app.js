@@ -14,13 +14,13 @@ database.authenticate()
     .catch((err) =>
         console.error('Erro ao conectar ao banco de dados: ' + err.message));
 
-// Sincronizar o modelo com o banco de dados
+/* Sincronizar o modelo com o banco de dados
 database.sync()
     .then(() =>
         console.log('Tabelas criadas com sucesso!'))
     .catch((err) =>
         console.error('Erro ao criar tabelas: ' + err.message));
-
+*/
 app.use('/api', clientRoutes);
 
 app.listen(port, () => {
