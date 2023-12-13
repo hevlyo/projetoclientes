@@ -1,11 +1,12 @@
 const express = require('express');
-const Router = express.Router();
-const clientController = require('../controllers/clientController.js');
+const router = express.Router();
+const clientController = require('../controllers/clientController');
 
-Router.get('/clientes', clientController.listClients);
-Router.get('/clientes/:id', clientController.listClientById);
-Router.post('/clientes', clientController.createClient);
-Router.put('/clientes/:id', clientController.updateClient);
-Router.delete('/clientes/:id', clientController.deleteClient);
+// Rotas CRUD
+router.get('/clientes', clientController.listClients);
+router.get('/clientes/:id', clientController.getClientById);
+router.post('/clientes', clientController.createClient);
+router.put('/clientes/:id', clientController.updateClient);
+router.delete('/clientes/:id', clientController.deleteClient);
 
-module.exports = Router;
+module.exports = router;

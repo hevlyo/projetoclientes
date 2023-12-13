@@ -1,18 +1,5 @@
-const mysql = require('mysql2');
+const { Sequelize } = require('sequelize');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '12345678',
-  database: 'testeclientes',
-});
+const db = new Sequelize('postgres://postgres:postgres@localhost:5432/testeclientes');
 
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao banco de dados: ' + err.message);
-  } else {
-    console.log('Conexão bem-sucedida ao banco de dados!');
-  }
-});
-
-module.exports = connection;
+module.exports = db;
