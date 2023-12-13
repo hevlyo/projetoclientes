@@ -51,6 +51,7 @@ exports.createClient = async (req, res) => {
 // Atualizar um cliente
 exports.updateClient = async (req, res) => {
     const ClientId = req.params.id;
+    const { nome, salario, endereco, cep, telefone, email } = req.body;
     try {
         const cliente = await Cliente.findByPk(ClientId);
         if (!cliente) {
