@@ -30,14 +30,15 @@ exports.getProductById = async (req, res) => {
 
 // Criar um novo produto
 exports.createProduct = async (req, res) => {
-    const { nome, preco, descricao, quantidade } = req.body;
+    const { nome, preco, descricao, categoria, estoque } = req.body;
 
     try {
         const produto = await Produto.create({
             nome,
             preco,
             descricao,
-            quantidade
+            categoria,
+            estoque
         });
         res.status(201).json(produto);
     } catch (error) {
